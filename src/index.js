@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 import Home from './demos/Home';
 import App from './App'
 import 'antd-mobile/dist/antd-mobile.css';
+import store from './store'
+import { Provider } from 'react-redux'
+import './mock'
+
 ReactDOM.render(
-  <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>
+  ,
   document.getElementById('root')
 );
 

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { login } from '../store/actions/user.js';
+import { connect } from 'react-redux';
 
 const Login = (props) => {
-    const login = ()=>{
-        localStorage.setItem('userinfo','tom')
-        props.history.replace(props.location.state)
+    const login = () => {
+        props.login('tom')
+        props.history.replace(props.location.state.pathname)
     }
     return (
         <div>
@@ -12,4 +14,5 @@ const Login = (props) => {
     )
 }
 
-export default Login
+
+export default connect(null, { login })(Login)
