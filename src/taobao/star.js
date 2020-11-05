@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { toggleStar } from '../store/actions/goods.js';
+import { Button } from 'antd-mobile';
 
 // TARGET 5
 class Star extends Component {
     constructor(props) {
         super(props);
+        this.checkLogin()
+    }
+
+    checkLogin() {
+        if(!this.props.login) {
+            const { pathname } = this.props.location
+            this.props.history.push('/login', { pathname })
+        }
     }
 
     render() {
@@ -16,12 +25,12 @@ class Star extends Component {
                 <div className={"star-list"}>
                     {
                         goodList.filter(item => starList.includes(item.id)).map(item => (
-                            <div className={"star-item"}>
-                                <p>商品{item.id}</p>
-                                <img src={`https://gw.alicdn.com/bao/uploaded/${item.src}.jpg_.webp`} alt="item.name"/>
-                                <button onClick={() => {
-                                    this.props.toggleStar(item.id)
-                                }}>删除</button>
+                            <div className={"star-item"} key={item.id}>
+                                <div className={'content'} style={{ display: 'flex' }}>
+                                    <img src={`https://gw.alicdn.com/bao/uploaded/${item.src}.jpg_.webp`} alt="item.name"/>
+                                    <p style={{ fontSize: '20px', lineHeight: '40px'}}>商品{item.id}</p>
+                                </div>
+                                <Button type="ghost" onClick={ () => this.props.toggleStar(item.id)} inline size="small" style={{ display: 'block' }}>删除</Button>
                             </div>
                         ))
                     }
@@ -33,7 +42,8 @@ class Star extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        good: state.good
+        good: state.good,
+        login: state.user.login
     }
 }
 

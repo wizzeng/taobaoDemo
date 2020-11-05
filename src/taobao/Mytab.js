@@ -58,7 +58,7 @@ class Mytab extends React.Component {
             pathname == '/car' || pathname == '/service' || pathname == '/shop') {
             return null;
         }
-        if (pathname == '/Detail/100' || pathname == '/Detail/101' ||
+        if (pathname == '/Detail/100' || pathname == '/Detail/101' || pathname == '/Detail/102' ||
             pathname == '/Detail/103' || pathname == '/Detail/104' ||
             pathname == '/Detail/104' || pathname == '/Detail/105' ||
             pathname == '/Detail/106' || pathname == '/Detail/107' ||
