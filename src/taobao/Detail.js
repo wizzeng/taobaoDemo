@@ -23,9 +23,9 @@ class Detail extends Component {
                     float: 'left',
                     width: '100%'
                 }} className={this.good.name}
-                     src={`https://gw.alicdn.com/bao/uploaded/${this.good.src}.jpg_.webp`}/>
+                     src={this.good.img}/>
                 {/* <li>姓名:{this.good.name}--年龄:{this.good.age}--ID:{this.good.id}</li> */}
-                <p>商品{this.good.id}</p>
+                <p>商品{this.good.name}</p>
                 <p>{this.good.id}￥</p>
             </div>
         )

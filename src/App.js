@@ -32,7 +32,7 @@ const App = (props) => {
     const fetchGoodsList = async () => {
         // 拉取数据，更新 redux
         const list = await fetchGoodList()
-        props.setGoods(list)
+        props.setGoods(list.data)
     }
 
     // TARGET1: 根据接口获取商品数据

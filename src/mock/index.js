@@ -3,7 +3,7 @@ import goods from './goods.js';
 
 
 const mockURLs = [
-    ...goods
+    // ...goods
 ]
 
 mockURLs.forEach(urlConfig => {

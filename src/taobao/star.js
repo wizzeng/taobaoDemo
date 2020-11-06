@@ -27,7 +27,7 @@ class Star extends Component {
                         goodList.filter(item => starList.includes(item.id)).map(item => (
                             <div className={"star-item"} key={item.id}>
                                 <div className={'content'} style={{ display: 'flex' }}>
-                                    <img src={`https://gw.alicdn.com/bao/uploaded/${item.src}.jpg_.webp`} alt="item.name"/>
+                                    <img src={item.img} alt="item.name"/>
                                     <p style={{ fontSize: '20px', lineHeight: '40px'}}>商品{item.id}</p>
                                 </div>
                                 <Button type="ghost" onClick={ () => this.props.toggleStar(item.id)} inline size="small" style={{ display: 'block' }}>删除</Button>

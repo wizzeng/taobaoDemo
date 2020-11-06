@@ -46,9 +46,9 @@ class Home extends Component {
                             this.props.goodList.map(v => {
                                 return <li key={v.id} onClick={() => this.routerTo(v)}>
                                     <img className={v.name}
-                                         src={`https://gw.alicdn.com/bao/uploaded/${v.src}.jpg_.webp`}
+                                         src={v.img}
                                     />
-                                    <p>商品{v.id}</p>
+                                    <p>商品{v.name}</p>
                                     <p>{v.id}￥</p>
                                 </li>
                             })
